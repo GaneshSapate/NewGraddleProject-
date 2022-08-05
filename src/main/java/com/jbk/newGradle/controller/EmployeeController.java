@@ -17,11 +17,29 @@ import java.util.List;
 @CrossOrigin
 public class EmployeeController {
 
+    // This is the updated controller we have added to show git operations
+
     @Autowired
     EmployeeService service;
 
     @Autowired
     EmployeeCache cache;
+
+
+    //asdkasd sadasdas sadsad
+    @PostMapping("/allEmployeeTest")
+    public ResponseEntity<List<Employee>> getAllEmployee1(){
+        //HashMap<Integer, Employee> map = cache.getMap();
+        //List<Employee> list= new ArrayList<>(map.values());
+        List<Employee> list=service.getAllEmployee();
+        if(!list.isEmpty()){
+            return new ResponseEntity<>(list, HttpStatus.OK);
+        }
+        else {
+            return new ResponseEntity<>(list, HttpStatus.NO_CONTENT);
+        }
+    }
+
 
     @GetMapping("/allEmployee")
     public ResponseEntity<List<Employee>> getAllEmployee(){
