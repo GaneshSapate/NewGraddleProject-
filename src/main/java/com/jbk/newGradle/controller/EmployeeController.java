@@ -25,8 +25,7 @@ public class EmployeeController {
     @Autowired
     EmployeeCache cache;
 
-
-    @GetMapping("/allEmployeeTest")
+    @PostMapping("/allEmployeeTest")
     public ResponseEntity<List<Employee>> getAllEmployee1(){
         //HashMap<Integer, Employee> map = cache.getMap();
         //List<Employee> list= new ArrayList<>(map.values());
